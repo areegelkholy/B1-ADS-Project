@@ -7,7 +7,6 @@ ds/                  our data structures (Milestone 1)
   DynamicArray.h     resizable array
   Stack.h            LIFO stack (optional size limit)
   Queue.h            FIFO queue, linked list (optional size limit, searchable)
-  MyString.h/.cpp    our own string class
   HashMap.h          string -> value hash map (separate chaining)
   HashSet.h/.cpp     set of ints (separate chaining)
   MinHeap.h          binary min-heap (tree stored in an array)
