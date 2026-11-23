@@ -10,9 +10,11 @@
 //   - Macro expansion contexts (challenge section).
 //
 //
+// The optional size limit is still useful, e.g. to limit nesting depth.
+//
 // DESIGN DECISIONS:
 //   - push/pop return true/false instead of crashing. This lets the
-//     caller print its own error message.
+//     caller print its own error message (e.g. "stack full").
 //   - A limit of 0 means "no limit".
 // ---------------------------------------------------------------
 
@@ -24,11 +26,10 @@
 template <typename T>
 class Stack {
 private:
-    DynamicArray<T> items; 
+    DynamicArray<T> items;  // the elements, bottom of stack at index 0
     int maxSize;            // 0 = unlimited, otherwise the stack limit
 
 public:
-
     explicit Stack(int limit = 0) : maxSize(limit) {}
 
     bool isEmpty() const { return items.size() == 0; }
@@ -38,7 +39,7 @@ public:
 
     int size() const { return items.size(); }
 
-    // Put a value on top. Returns false on overflow.
+    // Put a value on top. Returns false (and does nothing) on overflow.
     bool push(const T& value) {
         if (isFull()) {
             return false;
