@@ -47,7 +47,7 @@ public:
         clear();
     }
 
-    // Copying is not allowed .
+    // Copying is not allowed (see design decisions above).
     Queue(const Queue&) = delete;
     Queue& operator=(const Queue&) = delete;
 
