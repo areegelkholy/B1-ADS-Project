@@ -53,7 +53,7 @@ private:
 
 public:
     // Create an empty array. startCapacity must be at least 1.
-    explicit DynamicArray(int startCapacity = 1) {
+    explicit DynamicArray(int startCapacity = 4) {
         if (startCapacity < 1) startCapacity = 1;
         capacity = startCapacity;
         count = 0;
