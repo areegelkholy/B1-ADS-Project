@@ -1,0 +1,9 @@
+test_ds
+test_app
+asm
+sim
+*.o
+*.exe
+*.hex
+*.lst
+bench_symbols
